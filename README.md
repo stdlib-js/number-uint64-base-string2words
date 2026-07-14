@@ -45,38 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/number-uint64-base-string2words
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-string2words = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/number-uint64-base-string2words@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var string2words = require( 'path/to/vendor/umd/number-uint64-base-string2words/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-uint64-base-string2words@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.string2words;
-})();
-</script>
+var string2words = require( '@stdlib/number-uint64-base-string2words' );
 ```
 
 #### string2words( str, radix )
@@ -118,7 +112,7 @@ var bool = ( w === out );
 ## Notes
 
 -   The input string must be a valid representation of an unsigned 64-bit integer in the specified radix, containing no whitespace, sign symbols, or leading zeros.
--   If the provided string represents a value greater than `2^64-1` or the radix is invalid, then `0` is assigned to both high and low words.
+-   If the provided string represents a value greater than `2^64-1` or the radix is not an integer on the interval `[2, 36]`, the function throws a `RangeError`.
 
 </section>
 
@@ -130,13 +124,8 @@ var bool = ( w === out );
 
 ## Examples
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/number-uint64-base-string2words@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var string2words = require( '@stdlib/number-uint64-base-string2words' );
 
 var w = string2words( '1234', 10 );
 console.log( w );
@@ -153,11 +142,6 @@ console.log( w );
 w = string2words( '3w5e11264sgsf', 36 );
 console.log( w );
 // => [ 4294967295, 4294967295 ]
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
