@@ -1,0 +1,7 @@
+"use strict";var q=function(n,e){return function(){try{return e||n((e={exports:{}}).exports,e),e.exports}catch(a){throw (e=0, a)}};};var p=q(function(A,I){
+var c=require('@stdlib/string-base-slice/dist'),m=require('@stdlib/error-tools-fmtprodmsg/dist'),h=4294967296,o=[53,11,2048,33,8,6561,26,6,4096,22,6,15625,20,5,7776,18,5,16807,17,5,32768,16,5,59049,15,5,1e5,15,4,14641,14,4,20736,14,4,28561,13,4,38416,13,4,50625,13,3,4096,12,4,83521,12,4,104976,12,4,130321,12,3,8e3,12,3,9261,11,4,234256,11,4,279841,11,3,13824,11,3,15625,11,3,17576,11,3,19683,11,3,21952,10,4,707281,10,4,81e4,10,3,29791,10,3,32768,10,3,35937,10,3,39304,10,3,42875,10,3,46656];function k(n,e,a,g,i,r,u,v){var t,w,l,s;if(n.length<=a?t=parseInt(n,e):(t=parseInt(c(n,0,-g),e),w=parseInt(c(n,-g),e)),l=t/h>>>0,s=t>>>0,n.length>a&&(s=s*i+w,l=l*i+(s/h>>>0),s>>>=0,l>=h))throw new RangeError(m('323Kh',n));return r[v]=l,r[v+u]=s,r}function E(n,e,a,g,i){var r,u,v,t;if(e<2||e>36)throw new RangeError(m('323Ki',e));if(t=3*(e-2),r=o[t],u=o[t+1],v=o[t+2],n.length>r+u)throw new RangeError(m('323Kh',n));return e===2||e===4||e===16?(r=(r+u)/2,a[i]=parseInt("0"+c(n,0,-r),e),a[i+g]=parseInt(c(n,-r),e),a):k(n,e,r,u,v,a,g,i)}I.exports=E
+});var R=q(function(C,f){
+var V=p();function F(n,e){return V(n,e,[0,0],1,0)}f.exports=F
+});var O=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),P=p(),b=R();O(b,"assign",P);module.exports=b;
+/** @license Apache-2.0 */
+//# sourceMappingURL=index.js.map
